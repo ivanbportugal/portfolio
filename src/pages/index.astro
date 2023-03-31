@@ -3,12 +3,12 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
+// import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
-import Card from "@components/Card";
+// import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
-import slugify from "@utils/slugify";
+// import slugify from "@utils/slugify";
 import { SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
@@ -23,8 +23,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   <Header />
   <main id="main-content">
     <section id="hero">
-      <h1>Mingalaba</h1>
-      <a
+      <h1>Ivan Portugal</h1>
+      <!-- <a
         target="_blank"
         href="/rss.xml"
         class="rss-link"
@@ -38,15 +38,15 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
           ></path><circle cx="6" cy="18" r="2"></circle>
         </svg>
-      </a>
+      </a> -->
 
       <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+        Just a story about the last 1.5 decades or so. Strictly tech.
       </p>
       <p>
+        Is this a blog? No. A portfolio site? Not really. A way to connect? Sure!
+      </p>
+      <!-- <p>
         Read the blog posts or check
         <LinkButton
           className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
@@ -54,12 +54,12 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         >
           README
         </LinkButton> for more info.
-      </p>
+      </p> -->
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
           <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
+            <div class="social-links">Pick one:</div>
             <Socials />
           </div>
         )
@@ -68,7 +68,83 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
     <Hr />
 
-    {
+    <!-- Chart section -->
+    <section id="charting">
+      <div class="flex flex-row gap-x-2">
+        <div class="flex-1">
+          <h2 class="text-center mb-2">Interests</h2>
+          <Hr />
+          <table class="table-fixed w-full mt-4 border-collapse border text-left">
+            <caption class="caption-top mb-2">
+              2008-2010
+            </caption>
+            <thead>
+              <tr>
+                <th class="subject"></th>
+                <th class="value"></th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Java</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>DevOps</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>C#</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>SQL</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>8</td>
+            </tr>
+          </table>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-center mb-2">Expertise</h2>
+          <Hr />
+          <table class="table-fixed w-full mt-4 border-collapse border text-left">
+            <caption class="caption-top mb-2">
+              2008-2010
+            </caption>
+            <thead>
+              <tr>
+                <th class="subject"></th>
+                <th class="value"></th>
+              </tr>
+            </thead>
+            <tr>
+              <td>Java</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>DevOps</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>C#</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>SQL</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>5</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- {
       featuredPosts.length > 0 && (
         <>
           <section id="featured">
@@ -113,8 +189,8 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             ></path>
           </svg>
         </LinkButton>
-      </div>
-    </section>
+      </div> 
+    </section> -->
   </main>
 
   <Footer />
@@ -144,8 +220,20 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply mr-2 mb-1 whitespace-nowrap sm:mb-0;
   }
 
+  #charting {
+    @apply pt-12 pb-6;
+  }
+
+  #charting table tr td:last-child {
+    @apply text-right;
+  }
+
+  #charting table tr td {
+    @apply p-2;
+  }
+
   /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
+  /* #featured,
   #recent-posts {
     @apply pt-12 pb-6;
   }
@@ -155,5 +243,5 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
-  }
+  } */
 </style>
