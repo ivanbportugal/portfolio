@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-// import LinkButton from "@components/LinkButton.astro";
+import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
 // import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
@@ -65,6 +65,14 @@ const socialCount = SOCIALS.filter(social => social.active).length;
           </div>
         )
       }
+      <div>
+        <LinkButton
+          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
+          href="/contact"
+        >
+          QR me
+        </LinkButton>
+      </div>
     </section>
 
     <Hr />
