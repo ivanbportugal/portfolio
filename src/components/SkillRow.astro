@@ -1,0 +1,17 @@
+---
+const {skill, level} = Astro.props;
+---
+
+<tr>
+  <td>{skill}</td>
+  <td class:list={[`_${level}`, {classNames: true}]}>{level}</td>
+</tr>
+
+<style>
+  tr td:last-child {
+    @apply text-right;
+  }
+  tr td {
+    @apply p-2;
+  }
+</style>

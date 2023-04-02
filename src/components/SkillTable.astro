@@ -1,0 +1,22 @@
+---
+const {caption} = Astro.props;
+---
+
+<table class="table-fixed w-full mt-4 border-collapse border text-left">
+  <caption class="caption-top mb-2">
+    {caption}
+  </caption>
+  <thead>
+    <tr>
+      <th class="subject"></th>
+      <th class="value"></th>
+    </tr>
+  </thead>
+  <slot />
+</table>
+
+<style is:global>
+  ._1 {
+    @apply text-blue-500;
+  }
+</style>

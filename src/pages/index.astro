@@ -10,6 +10,8 @@ import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 // import slugify from "@utils/slugify";
 import { SOCIALS } from "@config";
+import SkillTable from "@components/SkillTable.astro";
+import SkillRow from "@components/SkillRow.astro";
 
 const posts = await getCollection("blog");
 
@@ -74,123 +76,28 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         <div class="flex-1">
           <h2 class="text-center mb-2">Interests</h2>
           <Hr />
-          <table class="table-fixed w-full mt-4 border-collapse border text-left">
-            <caption class="caption-top mb-2">
-              2008-2010
-            </caption>
-            <thead>
-              <tr>
-                <th class="subject"></th>
-                <th class="value"></th>
-              </tr>
-            </thead>
-            <tr>
-              <td>Java</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>DevOps</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>C#</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>SQL</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>JavaScript</td>
-              <td>8</td>
-            </tr>
-          </table>
+          <SkillTable caption="2008-2010">
+            <SkillRow skill="Java" level="10" />
+            <SkillRow skill="DevOps" level="10" />
+            <SkillRow skill="C#" level="1" />
+            <SkillRow skill="SQL" level="3" />
+            <SkillRow skill="JavaScript" level="8" />
+          </SkillTable>
         </div>
         <div class="flex-1">
           <h2 class="text-center mb-2">Expertise</h2>
           <Hr />
-          <table class="table-fixed w-full mt-4 border-collapse border text-left">
-            <caption class="caption-top mb-2">
-              2008-2010
-            </caption>
-            <thead>
-              <tr>
-                <th class="subject"></th>
-                <th class="value"></th>
-              </tr>
-            </thead>
-            <tr>
-              <td>Java</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>DevOps</td>
-              <td>7</td>
-            </tr>
-            <tr>
-              <td>C#</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>SQL</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>JavaScript</td>
-              <td>5</td>
-            </tr>
-          </table>
+          <SkillTable caption="2008-2010">
+            <SkillRow skill="Java" level="3" />
+            <SkillRow skill="DevOps" level="7" />
+            <SkillRow skill="C#" level="0" />
+            <SkillRow skill="SQL" level="2" />
+            <SkillRow skill="JavaScript" level="5" />
+          </SkillTable>
         </div>
       </div>
     </section>
 
-    <!-- {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>Featured</h2>
-            <ul>
-              {featuredPosts.map(({ data }) => (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          <Hr />
-        </>
-      )
-    }
-
-    <section id="recent-posts">
-      <h2>Recent Posts</h2>
-      <ul>
-        {
-          sortedPosts.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/posts/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
-        }
-      </ul>
-      <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts">
-          All Posts
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
-      </div> 
-    </section> -->
   </main>
 
   <Footer />
