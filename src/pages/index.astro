@@ -9,14 +9,15 @@ import Hr from "@components/Hr.astro";
 import Socials from "@components/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 // import slugify from "@utils/slugify";
-import { SOCIALS } from "@config";
+import { SOCIALS, SKILLS } from "@config";
 import SkillTable from "@components/SkillTable.astro";
 import SkillRow from "@components/SkillRow.astro";
+import SkillTimeRange from "@components/SkillTimeRange.astro";
 
-const posts = await getCollection("blog");
+// const posts = await getCollection("blog");
 
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+// const sortedPosts = getSortedPosts(posts);
+// const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 ---
@@ -72,7 +73,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
     <!-- Chart section -->
     <section id="charting">
-      <div class="flex flex-row gap-x-2">
+      {SKILLS.map(({ time, skills }) => {
+        <SkillTimeRange time={time} skills={skills} />
+      })}
+      <!-- <div class="flex flex-row gap-x-2">
         <div class="flex-1">
           <h2 class="text-center mb-2">Interests</h2>
           <Hr />
@@ -95,7 +99,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             <SkillRow skill="JavaScript" level="5" />
           </SkillTable>
         </div>
-      </div>
+      </div> -->
     </section>
 
   </main>

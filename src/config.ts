@@ -1,4 +1,4 @@
-import type { Site, SocialObjects } from "./types";
+import type { Site, SkillIntExp, SocialObjects } from "./types";
 
 export const SITE: Site = {
   website: "https://ivanportugal.com/",
@@ -16,6 +16,25 @@ export const LOGO_IMAGE = {
   width: 216,
   height: 46,
 };
+
+interface SkillIntExpProps {
+  time: string;
+  skills: SkillIntExp[];
+}
+
+export const SKILLS: SkillIntExpProps[] = [
+  {
+    time: "2008-2010",
+    skills: [
+      {
+        theSkill: "Java",
+        interest: "10",
+        expertise: "3"
+      }
+      // TODO this!!
+    ]
+  }
+]
 
 export const SOCIALS: SocialObjects = [
   {
