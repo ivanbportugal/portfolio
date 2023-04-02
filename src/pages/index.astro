@@ -7,11 +7,9 @@ import Footer from "@components/Footer.astro";
 import Hr from "@components/Hr.astro";
 // import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
-import getSortedPosts from "@utils/getSortedPosts";
+// import getSortedPosts from "@utils/getSortedPosts";
 // import slugify from "@utils/slugify";
 import { SOCIALS, SKILLS } from "@config";
-import SkillTable from "@components/SkillTable.astro";
-import SkillRow from "@components/SkillRow.astro";
 import SkillTimeRange from "@components/SkillTimeRange.astro";
 
 // const posts = await getCollection("blog");
@@ -73,33 +71,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
     <!-- Chart section -->
     <section id="charting">
-      {SKILLS.map(({ time, skills }) => {
-        <SkillTimeRange time={time} skills={skills} />
+      {SKILLS.map(({ time, skills }, index) => {
+        const showTitle = (index == 0);
+        return <SkillTimeRange time={time} skills={skills} showTitle={showTitle} />
       })}
-      <!-- <div class="flex flex-row gap-x-2">
-        <div class="flex-1">
-          <h2 class="text-center mb-2">Interests</h2>
-          <Hr />
-          <SkillTable caption="2008-2010">
-            <SkillRow skill="Java" level="10" />
-            <SkillRow skill="DevOps" level="10" />
-            <SkillRow skill="C#" level="1" />
-            <SkillRow skill="SQL" level="3" />
-            <SkillRow skill="JavaScript" level="8" />
-          </SkillTable>
-        </div>
-        <div class="flex-1">
-          <h2 class="text-center mb-2">Expertise</h2>
-          <Hr />
-          <SkillTable caption="2008-2010">
-            <SkillRow skill="Java" level="3" />
-            <SkillRow skill="DevOps" level="7" />
-            <SkillRow skill="C#" level="0" />
-            <SkillRow skill="SQL" level="2" />
-            <SkillRow skill="JavaScript" level="5" />
-          </SkillTable>
-        </div>
-      </div> -->
     </section>
 
   </main>

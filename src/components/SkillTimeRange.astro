@@ -7,27 +7,28 @@ import SkillTable from "./SkillTable.astro";
 interface Props {
   time: string;
   skills: SkillIntExp[];
+  showTitle: boolean;
 }
 
-const {time, skills} = Astro.props;
+const {time, skills, showTitle} = Astro.props;
 ---
 
 <div class="flex flex-row gap-x-2">
   <div class="flex-1">
-    <h2 class="text-center mb-2">Interests</h2>
+    {showTitle && <h2 class="text-center mb-2">Interests</h2>}
     <Hr />
     <SkillTable caption={time}>
       {skills.map(({theSkill, interest}) => {
-        <SkillRow skill={theSkill} level={interest} />
+        return <SkillRow skill={theSkill} level={interest} />
       })}
     </SkillTable>
   </div>
   <div class="flex-1">
-    <h2 class="text-center mb-2">Expertise</h2>
+    {showTitle && <h2 class="text-center mb-2">Expertise</h2>}
     <Hr />
     <SkillTable caption={time}>
       {skills.map(({theSkill, expertise}) => {
-        <SkillRow skill={theSkill} level={expertise} />
+        return <SkillRow skill={theSkill} level={expertise} />
       })}
     </SkillTable>
   </div>

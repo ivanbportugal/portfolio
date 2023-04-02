@@ -15,7 +15,7 @@ export type SocialObjects = {
   linkTitle: string;
 }[];
 
-export interface SkillIntExp {
+export type SkillIntExp = {
   theSkill: string;
   interest: string;
   expertise: string;

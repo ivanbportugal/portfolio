@@ -30,8 +30,147 @@ export const SKILLS: SkillIntExpProps[] = [
         theSkill: "Java",
         interest: "10",
         expertise: "3"
+      },
+      {
+        theSkill: "DevOps",
+        interest: "10",
+        expertise: "7"
+      },
+      {
+        theSkill: "C#, .NET",
+        interest: "1",
+        expertise: "0"
+      },
+      {
+        theSkill: "SQL",
+        interest: "3",
+        expertise: "3"
+      },
+      {
+        theSkill: "JavaScript",
+        interest: "8",
+        expertise: "5"
       }
-      // TODO this!!
+    ]
+  },
+  {
+    time: "2011-2014",
+    skills: [
+      {
+        theSkill: "Java",
+        interest: "10",
+        expertise: "7"
+      },
+      {
+        theSkill: "DevOps",
+        interest: "10",
+        expertise: "8"
+      },
+      {
+        theSkill: "C#, .NET",
+        interest: "2",
+        expertise: "1"
+      },
+      {
+        theSkill: "SQL",
+        interest: "4",
+        expertise: "4"
+      },
+      {
+        theSkill: "JavaScript",
+        interest: "10",
+        expertise: "6"
+      },
+      {
+        theSkill: "SPAs",
+        interest: "10",
+        expertise: "5"
+      }
+    ]
+  },
+  {
+    time: "2015-2019",
+    skills: [
+      {
+        theSkill: "Spring Boot",
+        interest: "9",
+        expertise: "8"
+      },
+      {
+        theSkill: "DevOps",
+        interest: "9",
+        expertise: "9"
+      },
+      {
+        theSkill: "C#, .NET",
+        interest: "9",
+        expertise: "6"
+      },
+      {
+        theSkill: "NodeJS",
+        interest: "7",
+        expertise: "8"
+      },
+      {
+        theSkill: "SQL",
+        interest: "6",
+        expertise: "6"
+      },
+      {
+        theSkill: "TypeScript",
+        interest: "10",
+        expertise: "8"
+      },
+      {
+        theSkill: "SPAs",
+        interest: "10",
+        expertise: "8"
+      }
+    ]
+  },
+  {
+    time: "2019-2023",
+    skills: [
+      {
+        theSkill: "Spring Boot",
+        interest: "9",
+        expertise: "9"
+      },
+      {
+        theSkill: "DevOps",
+        interest: "9",
+        expertise: "9"
+      },
+      {
+        theSkill: "C#, .NET",
+        interest: "9",
+        expertise: "8"
+      },
+      {
+        theSkill: "NextJS, React",
+        interest: "10",
+        expertise: "8"
+      },
+      {
+        theSkill: "SQL",
+        interest: "6",
+        expertise: "8"
+      },
+      {
+        theSkill: "TypeScript",
+        interest: "10",
+        expertise: "9"
+      },
+      {
+        theSkill: "Python",
+        interest: "8",
+        expertise: "7"
+      },
+      {
+        theSkill: "Event-Driven Arch",
+        interest: "10",
+        expertise: "5"
+      }
     ]
   }
 ]
