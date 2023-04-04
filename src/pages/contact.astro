@@ -1,20 +1,57 @@
 ---
 import Header from "@components/Header.astro";
 import Layout from "@layouts/Layout.astro";
+import QRCode from "qrcode-svg";
 
+const vCard = `BEGIN:VCARD
+VERSION:4.0
+EMAIL;type=HOME:ivanbportugal@gmail.com
+TEL;type=MOBILE:+1 (407) 462-8208
+NOTE:here's some random text to throw into the contact information
+CATEGORIES: blogger, internet troll
+GENDER:M
+TZ:America/Chicago
+URL:https://www.ivanportugal.com
+FN:Ivan Portugal
+N:Ivan
+END:VCARD`;
+
+const qrcode = new QRCode({
+  content: vCard,
+  padding: 4,
+  width: 300,
+  height: 300,
+  color: "#000000",
+  background: "#ffffff",
+  ecl: "M",
+  container: "svg-viewbox", //Responsive use
+  join: true,
+  xmlDeclaration: false
+});
+var svg = qrcode.svg();
 ---
 
 <Layout>
   <Header />
   <main id="main-content">
     <section>
-      <div class="flex mt-10">
-        <img
+      <div class="mt-10">
+        <div class="svg-wrapper" set:html={svg}></div>
+        <!-- <img
           class="mx-auto w-full"
           src="/assets/v-card.svg"
           alt="V-Card"
-        />
+        /> -->
       </div>
     </section>
   </main>
 </Layout>
+
+<style is:global>
+  .svg-wrapper svg {
+    width: 100%;
+    height: inherit;
+    margin: 0 auto;
+    display: block;
+  }
+</style>
