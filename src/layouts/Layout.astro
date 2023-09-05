@@ -1,5 +1,6 @@
 ---
 import { SITE } from "@config";
+import { pwaInfo } from 'virtual:pwa-info';
 import "@styles/base.css";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -85,6 +86,7 @@ const socialImageURL = new URL(
     </script>
 
     <script is:inline src="/toggle-theme.js"></script>
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
   </head>
   <body>
     <slot />
