@@ -19,7 +19,7 @@ export type SkillIntExp = {
   theSkill: string;
   interest: string;
   expertise: string;
-}
+};
 
 export type SocialIcons = {
   [social in SocialMedia]: string;
