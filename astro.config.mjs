@@ -46,7 +46,6 @@ export default defineConfig({
             purpose: 'any maskable',
           },
         ],
-        start_url: 'https://ivanportugal.com/',
       },
       workbox: {
         navigateFallback: '/404',
