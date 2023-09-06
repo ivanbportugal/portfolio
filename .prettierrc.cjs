@@ -1,4 +1,4 @@
-{
+export default {
   "arrowParens": "avoid",
   "semi": true,
   "tabWidth": 2,
@@ -7,5 +7,14 @@
   "jsxSingleQuote": false,
   "trailingComma": "es5",
   "bracketSpacing": true,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  plugins: ['prettier-plugin-astro'],
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+  ]
 }
