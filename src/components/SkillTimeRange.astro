@@ -15,7 +15,7 @@ const {time, skills, showTitle} = Astro.props;
 
 <div class="flex flex-row gap-x-2">
   <div class="flex-1">
-    {showTitle && <h2 class="text-center mb-2">Interests</h2>}
+    {showTitle && <h2 class="text-center mb-2">Interest</h2>}
     <Hr />
     <SkillTable caption={time}>
       {skills.map(({theSkill, interest}) => {

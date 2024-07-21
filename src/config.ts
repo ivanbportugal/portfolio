@@ -129,7 +129,7 @@ export const SKILLS: SkillIntExpProps[] = [
     ],
   },
   {
-    time: "2019-2023",
+    time: "2019-2022",
     skills: [
       {
         theSkill: "Spring Boot",
@@ -170,6 +170,51 @@ export const SKILLS: SkillIntExpProps[] = [
         theSkill: "Event-Driven Arch",
         interest: "10",
         expertise: "5",
+      },
+    ],
+  },
+  {
+    time: "2022-2024",
+    skills: [
+      {
+        theSkill: "Spring Boot",
+        interest: "9",
+        expertise: "9",
+      },
+      {
+        theSkill: "Kafka",
+        interest: "10",
+        expertise: "7",
+      },
+      {
+        theSkill: "Flutter",
+        interest: "10",
+        expertise: "6",
+      },
+      {
+        theSkill: "React, Vue",
+        interest: "10",
+        expertise: "8",
+      },
+      {
+        theSkill: "SQL",
+        interest: "6",
+        expertise: "8",
+      },
+      {
+        theSkill: "TypeScript",
+        interest: "10",
+        expertise: "9",
+      },
+      {
+        theSkill: "Python",
+        interest: "9",
+        expertise: "7",
+      },
+      {
+        theSkill: "C#, .NET",
+        interest: "3",
+        expertise: "8",
       },
     ],
   },

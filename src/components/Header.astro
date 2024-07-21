@@ -21,7 +21,7 @@ export interface Props {
         {
           LOGO_IMAGE.enable ? (
             <img
-              src={LOGO_IMAGE.svg ? logoSVG : logoPNG}
+              src={LOGO_IMAGE.svg ? logoSVG.toString() : logoPNG.toString()}
               alt="AstroPaper Logo"
               width={LOGO_IMAGE.width}
               height={LOGO_IMAGE.height}

@@ -1,7 +1,6 @@
 import { slugifyStr } from "./slugify";
-import type { CollectionEntry } from "astro:content";
 
-const getUniqueTags = (posts: CollectionEntry<"blog">[]) => {
+const getUniqueTags = (posts: any[]) => {
   let tags: string[] = [];
   const filteredPosts = posts.filter(({ data }) => !data.draft);
   filteredPosts.forEach(post => {

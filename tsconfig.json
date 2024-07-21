@@ -1,7 +1,12 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": "src",
+    "types": [
+      "vite/client",
+      "vite-plugin-pwa/client"
+    ],
     "paths": {
       "@assets/*": ["assets/*"],
       "@config": ["config.ts"],
