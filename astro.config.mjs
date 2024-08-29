@@ -24,6 +24,7 @@ export default defineConfig({
       scope: '/',
       includeAssets: ['favicon.svg'],
       registerType: 'autoUpdate',
+      strategies: "generateSW",
       manifest: {
         name: 'My Story',
         short_name: 'My Story',
@@ -48,13 +49,56 @@ export default defineConfig({
         ],
       },
       workbox: {
-        navigateFallback: '/404',
+        navigateFallback: '/',
         globPatterns: ['**/*.{css,js,html,svg,png,ico,txt}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/fonts\.googleapis\.com/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'google-fonts-stylesheets',
+              maxEntries: 30
+            },
+          },
+          {
+            urlPattern: /\.(?:js|css)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'static-assets',
+              expiration: {
+                maxEntries: 50,
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images',
+              expiration: {
+                maxEntries: 50,
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:woff|woff2|ttf|otf|eot)$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts',
+              expiration: {
+                maxEntries: 50,
+              },
+            },
+          }
+        ]
       },
       devOptions: {
         enabled: true,
-        navigateFallbackAllowlist: [/^\/404$/],
+        navigateFallbackAllowlist: [/^\//],
       },
+      experimental: {
+        directoryAndTrailingSlashHandler: true,
+      }
     }),
   ],
   markdown: {
