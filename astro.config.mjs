@@ -90,16 +90,6 @@ export default defineConfig({
                 maxEntries: 50,
               },
             },
-          },
-          {
-            urlPattern: /\/contact/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'contact-form',
-              expiration: {
-                maxEntries: 10,
-              },
-            },
           }
         ]
       },
