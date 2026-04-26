@@ -27,6 +27,11 @@ export const SKILLS: SkillIntExpProps[] = [
     time: "2024-2026",
     skills: [
       {
+        theSkill: "Flutter",
+        interest: "10",
+        expertise: "9",
+      },
+      {
         theSkill: "Spring Boot",
         interest: "9",
         expertise: "9",
@@ -35,11 +40,6 @@ export const SKILLS: SkillIntExpProps[] = [
         theSkill: "Kafka",
         interest: "9",
         expertise: "8",
-      },
-      {
-        theSkill: "Flutter",
-        interest: "10",
-        expertise: "9",
       },
       {
         theSkill: "React, Vue",
